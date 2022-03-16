@@ -4,3 +4,7 @@
 @import './utils/mixins.scss';
 
 @import './components/NavigationHorizontal.scss';
+
+.red {
+    color: $color-red;
+}
