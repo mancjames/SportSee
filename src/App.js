@@ -2,6 +2,7 @@ import React from 'react';
 import './sass/main.scss';
 
 import NavigationHorizontal from './components/NavigationHorizontal';
+import NavigationVerticle from './components/NavigationVerticle';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <header>
           <NavigationHorizontal />
+          <NavigationVerticle />
       </header>
     </div>
   );
