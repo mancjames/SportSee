@@ -3,6 +3,7 @@ import './sass/main.scss';
 
 import NavigationHorizontal from './components/NavigationHorizontal';
 import NavigationVerticle from './components/NavigationVerticle';
+import Dashboard from './components/Dashboard';
 
 function App() {
 
@@ -12,6 +13,9 @@ function App() {
           <NavigationHorizontal />
           <NavigationVerticle />
       </header>
+      <main>
+        <Dashboard />
+      </main>
     </div>
   );
 }
