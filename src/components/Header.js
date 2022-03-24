@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 /**
- * This function creates the header with the name of the user
- * @param {string} props any name
- * @returns {string} header with user's name
+ * Component that creates the header with the name of the user based on api data
+ * 
+ *@component
+ * @example
+  * const name = 'John;
+ *  * return (
+ *   <Header name={name}/>
+ * )
  */
 
 export default function Header(props) {

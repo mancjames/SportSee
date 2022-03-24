@@ -23,7 +23,14 @@ import {
  * )
  */
 
-   const CustomToolTip = ({ active, payload, label }) => {
+  /**
+   * CustomToolTip 
+   * @param {Boolean} active if bar is selected
+   * @param {array} payload provides array data from specific bar chart selected
+   * @returns 
+   */
+
+   const CustomTooltip = ({ active, payload}) => {
     if (active && payload && payload.length) {
       return (
           <div className="dailyActivityGraph__tooltip">
@@ -35,6 +42,11 @@ import {
   
     return null;
   };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  }
 
 export default function DailyActivityGraph(props) {
   return (
@@ -64,9 +76,9 @@ export default function DailyActivityGraph(props) {
                     fill="black"
                 > Daily activity </text>
         <CartesianGrid strokeDasharray="2" vertical={false} />
-        <XAxis tickLine={false} dataKey="day"  />
-        <YAxis orientation="right" axisLine={false} tickLine={false} />
-        <Tooltip content={<CustomToolTip />} />
+        <XAxis tickLine={false} dataKey="day" dy={8} />
+        <YAxis orientation="right" axisLine={false} tickLine={false} dx={8} />
+        <Tooltip content={<CustomTooltip />} />
         <Legend align='right' 
         verticalAlign='top' 
         iconType='circle' 
