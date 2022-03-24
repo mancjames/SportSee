@@ -1,8 +1,9 @@
-@import './base/variables.scss';
+@import './base/_variables.module.scss';
 @import './base/global.scss';
 
 @import './utils/mixins.scss';
 
+@import './components/dailyActivityGraph';
 @import './components/NavigationHorizontal.scss';
 @import './components//NavigationVerticle.scss';
 @import './components/Dashboard.scss'

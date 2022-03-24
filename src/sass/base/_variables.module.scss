@@ -1,0 +1,18 @@
+$color-red: #FF0101;
+$color-black: #020203;
+$color-gray: #74798C;
+$color-white: #fff;
+
+$color-graph-black: #282D30;
+$color-graph-red--dark: #E60000;
+$color-graph-red--light: #F60000;
+$color-graph-gray: #FBFBFB;
+$color-text-gray--light: #9B9EAC;
+$color-text-gray--dark: #74798C;
+
+:export {
+    colorGraphBlack: $color-graph-black;
+    colorGraphRedDark: $color-graph-red--dark;
+    colorGraphRedLight: $color-graph-red--light;
+    colorGraphGray: $color-graph-gray;
+};
