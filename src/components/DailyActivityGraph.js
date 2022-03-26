@@ -18,7 +18,7 @@ import {
  * @component
  * @example
  * const activity = [{day: '2020-11-01', kilogram:70, calories:1920}, {day: '2020-11-02', kilogram:71, calories:1670}]
- *  * return (
+ * return (
  *   <DailyActivityGraph activity={props.activity}/>
  * )
  */
@@ -27,7 +27,7 @@ import {
    * CustomToolTip 
    * @param {Boolean} active if bar is selected
    * @param {array} payload provides array data from specific bar chart selected
-   * @returns 
+   * @returns custom tool tip showing only the weight and calories
    */
 
    const CustomTooltip = ({ active, payload}) => {
@@ -48,7 +48,29 @@ import {
     payload: PropTypes.array,
   }
 
+  /**
+   * formatDate
+   * @param {string} input input date from JSON 
+   * @returns the date reformated to only provide the day
+   */
+  function formatDate(input) {
+    const date = new Date(input)
+    const day = date.getDate()
+    return day
+  }
+
+  formatDate.propTypes = {
+      input: PropTypes.string
+  }
+
 export default function DailyActivityGraph(props) {
+
+    const data = props.activity.data.sessions.map((d) => ({
+        day: formatDate(d.day),
+        kilogram: d.kilogram,
+        calories: d.calories
+    }));
+
   return (
     <div className="dailyActivityGraph">
         <ResponsiveContainer
@@ -56,7 +78,7 @@ export default function DailyActivityGraph(props) {
         height="100%"
         >
         <BarChart
-        data={props.activity.data.sessions}
+        data={data}
         fill="black"
         margin={{
             top: 20,

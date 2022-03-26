@@ -8,7 +8,7 @@ import StatsSection from './StatsSection'
 export default function Dashboard() {
     const { response : user, loading } = useFetch('http://localhost:3000/user/12')
     const { response: activity, loading: loadingActivity } = useFetch('http://localhost:3000/user/12/activity')
-    // const { response: averageSessions } = useFetch('http://localhost:3000/user/12/average-sessions')
+    const { response: averageSessions, loading: loadingSessions } = useFetch('http://localhost:3000/user/12/average-sessions')
     // const { response: performance } = useFetch('http://localhost:3000/user/12/performance')
 
   return (
@@ -18,10 +18,10 @@ export default function Dashboard() {
       ) : (
             <Header name={user.data.userInfos.firstName} />
       )}
-      {loadingActivity ? (
+      {(loadingActivity && loadingSessions) ? (
           'Loading...'
       ) : (
-        <StatsSection activity={activity} />
+        <StatsSection activity={activity} averageSessions={averageSessions} />
       )
       }
     </main>
