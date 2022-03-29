@@ -19,6 +19,12 @@ import {
  * )
  */
 
+   /**
+   * CustomToolTip 
+   * @param {Boolean} active if bar is selected
+   * @param {array} payload provides array data from specific point in line chart
+   * @returns custom tool tip showing only the amount of minutes for session
+   */
    const CustomTooltip = ({ active, payload}) => {
     if (active && payload && payload.length) {
         return (
@@ -30,6 +36,11 @@ import {
     return null;
   };
 
+   /**
+   * formatDay
+   * @param {integer} input input day number from JSON 
+   * @returns the day of the week based on number of day in week - for example day 3 is W for Wednesday
+   */
   function formatDay(input){
       switch(input){
         case 1:
@@ -63,10 +74,7 @@ export default function AverageSpeedChart(props) {
         day: formatDay(d.day),
         sessionLength: d.sessionLength
     }));
-
-    console.log(props.averageSessions.data.sessions)
-    console.log(data)
-
+    
   return (
     <div className="averageSpeedGraph">
         <ResponsiveContainer width="100%" height="100%">
