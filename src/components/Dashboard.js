@@ -18,10 +18,10 @@ export default function Dashboard() {
       ) : (
             <Header name={user.data.userInfos.firstName} />
       )}
-      {(loadingActivity && loadingSessions) ? (
-          'Loading...'
+      {(!loadingActivity && !loadingSessions) ? (
+          <StatsSection activity={activity} averageSessions={averageSessions} />
       ) : (
-        <StatsSection activity={activity} averageSessions={averageSessions} />
+        'Loading...'
       )
       }
     </main>
