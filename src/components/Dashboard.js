@@ -19,7 +19,7 @@ export default function Dashboard() {
             <Header name={user.data.userInfos.firstName} />
       )}
       {(!loadingActivity && !loadingSessions && !loadingPerformance) ? (
-          <StatsSection activity={activity} averageSessions={averageSessions} performance={performance}/>
+          <StatsSection activity={activity} averageSessions={averageSessions} performance={performance} score={user.data.todayScore}/>
       ) : (
         'Loading...'
       )

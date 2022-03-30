@@ -24,10 +24,9 @@ import variables from '../sass/base/_variables.module.scss';
 /**
  * 
  * @param {string} str inputs a string
- * @returns the string with the first letter as a capital
+ * @returns the string with the first letter as a capital eg cardio to Cardio
  */
  function capitalizeFirstLetter(str) {
-    console.log(str)
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
@@ -40,7 +39,7 @@ import variables from '../sass/base/_variables.module.scss';
 function kindType(kind, value){
     for (let property in kind)
     if (property === value) return capitalizeFirstLetter(kind[property]);
-return "key is not found";
+return "category not found";
 }
 
 
@@ -58,16 +57,17 @@ export default function PerformanceRadarChart(props) {
                 <RadarChart
                         outerRadius="55%"
                         innerRadius="10%"
-                        data={data}
                         cx="50%"
                         cy="50%"
+                        data={data}
                 >
-                    <PolarGrid />
+                    <PolarGrid radialLines={false}/>
                     <PolarAngleAxis 
                             dataKey="kind" 
                             stroke = "white"
                             axisLine= {false}
                             tickLine={false}
+                            tickSize={12}
                     />
                         
                     <Radar
