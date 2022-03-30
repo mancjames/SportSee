@@ -13,8 +13,8 @@ import {
  *
  * @component
  * @example
- * const sessions = [{day: 1, sessionLength:60}, {day: 2, sessionLength:85}]
- *  * return (
+ * averageSessions = [{day: 1, sessionLength:60}, {day: 2, sessionLength:85}]
+ * return (
  *   <AverageSpeedGraph averageSessions={props.averageSessions}/>
  * )
  */
