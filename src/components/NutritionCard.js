@@ -28,13 +28,13 @@ export default function NutritionCard(props) {
         case "calories":
             unit="kCal";
             desc = "Calories";
-            icon.push(<FontAwesomeIcon icon={faFire} />);
+            icon.push(<FontAwesomeIcon key="icon" icon={faFire} />);
             break;
         
         case "proteins":
             unit="g";
             desc = "Proteins";
-            icon.push(<FontAwesomeIcon icon={faDrumstickBite} />);
+            icon.push(<FontAwesomeIcon key="icon" icon={faDrumstickBite} />);
             colorClass ="nutritionCard__icon--protein";
             break;    
 
@@ -42,14 +42,14 @@ export default function NutritionCard(props) {
             unit="g";
             desc = "Carbs";
             colorClass ="nutritionCard__icon--carb";
-            icon.push(<FontAwesomeIcon icon={faAppleWhole} />);
+            icon.push(<FontAwesomeIcon key="icon" icon={faAppleWhole} />);
             break;
 
         case "lipids":
             unit="g";
             desc = "Lipids";
             colorClass ="nutritionCard__icon--lipid";
-            icon.push(<FontAwesomeIcon icon={faBurger} />);
+            icon.push(<FontAwesomeIcon key="icon" icon={faBurger} />);
             break;
                 
         default:

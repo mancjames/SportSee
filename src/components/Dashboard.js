@@ -13,13 +13,11 @@ export default function Dashboard() {
 
   return (
     <main className="dashboard__container">
-        {loading ? (
-        'Loading...'
-      ) : (
-            <Header name={user.data.userInfos.firstName} />
-      )}
-      {(!loadingActivity && !loadingSessions && !loadingPerformance) ? (
+      {(!loading && !loadingActivity && !loadingSessions && !loadingPerformance) ? (
+        <div className="dashboard__main">
+          <Header name={user.data.userInfos.firstName} />
           <StatsSection activity={activity} averageSessions={averageSessions} performance={performance} score={user.data.todayScore || user.data.score} nutrition={user.data.keyData}/>
+        </div>
       ) : (
         'Loading...'
       )
