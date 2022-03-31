@@ -3,6 +3,7 @@ import DailyActivityGraph from './DailyActivityGraph'
 import AverageSpeedChart from './AverageSpeedChart'
 import PerformanceRadarChart from './PerformanceRadarChart'
 import ScoreGraph from './ScoreGraph'
+import NutritionCard from './NutritionCard'
 
 export default function StatsSection(props) {
   return (
@@ -12,6 +13,12 @@ export default function StatsSection(props) {
        <AverageSpeedChart averageSessions={props.averageSessions} />
        <PerformanceRadarChart kind={props.performance.data.kind} data={props.performance.data.data} />
        <ScoreGraph score={props.score}/>
+       </div>
+       <div className="statsSection-nutrition">
+        <NutritionCard type="calories" value={props.nutrition.calorieCount}/>
+        <NutritionCard type="proteins" value={props.nutrition.proteinCount}/>
+        <NutritionCard type="carbs" value={props.nutrition.carbohydrateCount}/>
+        <NutritionCard type="lipids" value={props.nutrition.lipidCount}/>
        </div>
     </section>
   )
