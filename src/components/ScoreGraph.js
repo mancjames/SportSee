@@ -28,6 +28,11 @@ export default function ScoreGraph(props) {
                         startAngle={90}
                         endAngle={450}
                     >
+                        <svg style={{width: "inherit", height: "inherit"}}
+                        viewBox="0 0 80 120"
+                        >
+                            <circle cx="40" cy="60" r="40" fill="white" />
+                        </svg> 
                         <PolarAngleAxis
                             type="number"
                             domain={[0, 100]}
@@ -38,7 +43,7 @@ export default function ScoreGraph(props) {
                         <RadialBar
                             minAngle={5}
                             fill="#E60000"
-                            background={{ fill: "#fff" }}
+                            background={{ fill: "#FBFBFB" }}
                             position="center"
                             clockWise={true}
                             dataKey="value"

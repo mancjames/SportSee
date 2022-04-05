@@ -1,4 +1,5 @@
 .scoreGraph{
+    position: relative;
     background-color: $color-graph-gray;
     border-radius: 5px;
 
@@ -11,6 +12,7 @@
     min-height: 200px;
     max-height: 260px;
     height: 19vw;
+
     &__text{
         font-size: 16px;
         fill: $color-graph-black;
