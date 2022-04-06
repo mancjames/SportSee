@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# SportSee
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Goal
 
-In the project directory, you can run:
+Create a sports performance analytics dashboard
 
-### `yarn start`
+### Needs
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Display users' datas in forms of charts
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Skills
 
-### `yarn test`
+• Recover datas from API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• Correct formatting as needed
 
-### `yarn build`
+• Graph data in different graphs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+• Structure different React components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+• Write the Readme
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Resources Provided
 
-### `yarn eject`
+• [Sketch Figma](https://www.figma.com/file/EUeLaIjt4cf9bZb1hexM6y/UI-design-Sportify-EN?node-id=1%3A2)
+• [Kanban](https://openclassrooms.com/en/paths/315/projects/828/assignment#:~:text=kanban%20with%20all%20user%20Stories)
+• [Back-end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+• React
+• React Router
+• Sass
+• Recharts
+• Prop-Types
+• JS-Docs
+• font-awesome
+• yarn
+• Node v16
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1 - Installing the Back-End
 
-## Learn More
+Please follow the instructions in the below link to set up the back end in your local environment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+once installed, launch the back-end on port 3000(default):
 
-### Code Splitting
+'yarn dev'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2 - Installing and launching the Front-End
 
-### Analyzing the Bundle Size
+Clone the repository of SportSee front-end:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+git clone https://github.com/mancjames/SportSee.git
 
-### Making a Progressive Web App
+Inside this front-end repository, install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+yarn install
 
-### Advanced Configuration
+Launch front-end on port 3001(default):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+'yarn start'
 
-### Deployment
+Front-end is now rendered at URL http://localhost:3001.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 3 - Browse the website with different end-points
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For purpose of this exercise, only endpoints available from the API are '/user/18' and '/user/12'. Any other endpoints will lead to an error page. When the application first loads, it will automatically load to '/user/12'.
