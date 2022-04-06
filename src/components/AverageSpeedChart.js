@@ -36,6 +36,11 @@ import {
     return null;
   };
 
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  }
+
    /**
    * formatDay
    * @param {integer} input input day number from JSON 
@@ -69,8 +74,9 @@ import {
   };
 
 export default function AverageSpeedChart(props) {
+  console.log(props)
 
-    const data = props.averageSessions.data.sessions.map((d) => ({
+    const data = props.averageSessions.map((d) => ({
         day: formatDay(d.day),
         sessionLength: d.sessionLength
     }));
@@ -134,10 +140,10 @@ export default function AverageSpeedChart(props) {
 }
 
 AverageSpeedChart.propTypes = {
-    sessions: PropTypes.arrayOf(
-        PropTypes.shape({
-            day: PropTypes.number,
-            sessionLength: PropTypes.number,
-        })
-      )
+  averageSessions: PropTypes.arrayOf(
+    PropTypes.shape({
+        day: PropTypes.number,
+        sessionLength: PropTypes.number,
+    })
+  )
 }

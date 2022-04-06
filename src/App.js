@@ -6,16 +6,24 @@ import NavigationVerticle from './components/NavigationVerticle';
 import Dashboard from './components/Dashboard';
 import Error from './components/Error';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-function App() {
 
+/**
+ * App component managing routing
+ * @component
+ * @example
+ * returns (
+ *  <App />
+ * )
+ */
+function App() {
   return (
-    <BrowserRouter>
     <div className="App">
+      <BrowserRouter>
       <header>
           <NavigationHorizontal />
           <NavigationVerticle />
       </header>
-      <main>
+      <main className="app__container">
       
     <Routes>
       <Route path="/" exact element={<Navigate replace to="/user/12" />} />
@@ -23,8 +31,8 @@ function App() {
         <Route path="*" element={<Error />} />
     </Routes>
       </main>
+      </BrowserRouter>
     </div>
-    </BrowserRouter>
   );
 }
 

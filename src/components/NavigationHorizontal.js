@@ -1,6 +1,15 @@
 import React from 'react'
 import { ReactComponent as Logo} from '../assets/logo.svg'
 
+/**
+ * Component returning horizontal navigation bar
+ * 
+ * @component
+ * returns (
+ * <NavigationHorizontal />
+ * )
+ */
+
 export default function NavigationHorizontal() {
   return (
     <nav className="navhorizontal">

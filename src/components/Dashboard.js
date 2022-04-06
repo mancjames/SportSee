@@ -5,6 +5,15 @@ import Header from './Header'
 import StatsSection from './StatsSection'
 import Error from './Error';
 
+  /**
+ * Component displaying dashboard with all of users graphs
+ *
+ * @component
+ * @example
+ * return (
+ *   <Dashboard />
+ * )
+ */
 export default function Dashboard() {
     let { id } = useParams()
     const { response : user, loading, error } = useFetch(`http://localhost:3000/user/${id}`)

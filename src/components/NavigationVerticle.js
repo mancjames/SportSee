@@ -4,6 +4,15 @@ import {ReactComponent as SwimIcon} from '../assets/swimicon.svg'
 import {ReactComponent as BikeIcon} from '../assets/bikeicon.svg'
 import {ReactComponent as WeightIcon} from '../assets/weighticon.svg'
 
+/**
+ * Component returning verticle navigation bar
+ * 
+ * @component
+ * returns (
+ * <NavigationVerticle />
+ * )
+ */
+
 export default function NavigationVerticle() {
   return (
     <nav className="navverticle">

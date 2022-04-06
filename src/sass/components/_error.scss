@@ -1,0 +1,11 @@
+.error{ 
+    font-size: 2rem;
+    &__header{
+        color: $color-red;
+        font-size: 5rem;
+        margin-bottom: .5rem;
+    }
+    &__paragraph{
+        margin-bottom: 1rem;
+    }
+}
