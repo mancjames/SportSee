@@ -64,20 +64,24 @@ _yarn dev_
 
 ### 2 - Installing and launching the Front-End
 
-Clone the repository of SportSee front-end:
+Clone the repository of SportSee front-end in your chosen location using the following command:
 
-git clone https://github.com/mancjames/SportSee.git
+_git clone https://github.com/mancjames/SportSee.git_
 
-Inside this front-end repository, install dependencies using the following command:
+Inside this reposity, use the following to install the required dependencies:
 
 _yarn install_
 
-To launch front-end on port 3001(default), run the following command:
+Once done, you can launch the front-end application on port 3001(default) by running the following command:
 
 _yarn start_
 
-Front-end is now rendered at URL http://localhost:3001.
+The application is now rendered at URL http://localhost:3001.
 
 ### 3 - Browse the website with different end-points
 
-For purpose of this exercise, only endpoints available from the API are '/user/18' and '/user/12'. Any other endpoints will lead to an error page. When the application first loads, it will automatically load to '/user/12'.
+For purpose of this exercise, the only endpoints available in the application are '/user/18' and '/user/12'. 
+
+Any other endpoints will lead to an error page. 
+
+When the application first loads, it will automatically load to '/user/12'.
