@@ -5,6 +5,7 @@ import { ReactComponent as Logo} from '../assets/logo.svg'
  * Component returning horizontal navigation bar
  * 
  * @component
+ * @example
  * returns (
  * <NavigationHorizontal />
  * )

@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
  * 
  *@component
  * @example
-  * const name = 'John;
- *  * return (
+ * const name = 'John;
+ * return (
  *   <Header name={name}/>
  * )
  */

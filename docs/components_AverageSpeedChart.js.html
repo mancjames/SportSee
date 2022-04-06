@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/AverageSpeedChart.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/AverageSpeedChart.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types'
+import {
+    LineChart,
+    Line,
+    XAxis,
+    Tooltip,
+    ResponsiveContainer
+  } from "recharts";
+
+  /**
+ * Component displaying the user's sessions results with a line chart from 'recharts'
+ *
+ * @component
+ * @example
+ * averageSessions = [{day: 1, sessionLength:60}, {day: 2, sessionLength:85}]
+ * return (
+ *   &lt;AverageSpeedGraph averageSessions={props.averageSessions}/>
+ * )
+ */
+
+   /**
+   * CustomToolTip 
+   * @param {Boolean} active if bar is selected
+   * @param {array} payload provides array data from specific point in line chart
+   * @returns custom tool tip showing only the amount of minutes for session
+   */
+   const CustomTooltip = ({ active, payload}) => {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+        return (
+            &lt;div className="averageSpeedGraph__tooltip">
+                &lt;p>{`${payload[0].value}min`}&lt;/p>
+            &lt;/div>
+        );
+    }
+    return null;
+  };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  }
+
+   /**
+   * formatDay
+   * @param {integer} input input day number from JSON 
+   * @returns the day of the week based on number of day in week - for example day 3 is W for Wednesday
+   */
+  function formatDay(input){
+      switch(input){
+        case 1:
+          input = 'M';
+          break;
+        case 2:
+          input = 'T';
+          break;
+        case 3:
+          input = 'W';
+          break;
+        case 4:
+          input = 'T';
+          break;
+        case 5:
+          input = 'F';
+          break;
+        case 6:
+        case 7:
+          input = 'S';
+          break;
+        default:
+          input = 'unrecognised day'
+      }
+      return input
+  };
+
+export default function AverageSpeedChart(props) {
+  console.log(props)
+
+    const data = props.averageSessions.map((d) => ({
+        day: formatDay(d.day),
+        sessionLength: d.sessionLength
+    }));
+    
+  return (
+    &lt;div className="averageSpeedGraph">
+        &lt;ResponsiveContainer width="100%" height="100%">
+          &lt;LineChart
+              data={data}
+              margin={{
+                  top: 90,
+                  right: 20,
+                  left: 20,
+                  bottom: 40
+              }}
+          >
+            &lt;XAxis 
+              className="averageSpeedGraph__legend" 
+              stroke="white" dataKey="day"  
+              axisLine={false} 
+              tickLine={false} 
+              tickMargin={20}
+              dy={20}
+            />
+            &lt;Tooltip content={&lt;CustomTooltip />}/>
+
+            &lt;defs>
+              &lt;linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                &lt;stop offset="40%"   stopColor="rgba(255,255,255,0.5)"/>
+                &lt;stop offset="100%" stopColor="#ffffff"/>
+              &lt;/linearGradient>
+            &lt;/defs>
+
+
+            &lt;Line
+              dot={false}
+              type="natural"
+              dataKey="sessionLength"
+              stroke="url(#linear)"
+              strokeWidth={3}
+              activeDot={{ stroke: 'white', strokeWidth: 5, r: 3 }}
+              
+            />
+
+            &lt;text 
+              className="averageSpeedGraph__title"
+              fontSize="15px"
+              x="15%"
+              y="15%"
+            > Average speed of&lt;/text>
+            &lt;text 
+              className="averageSpeedGraph__title"
+              fontSize="15px"
+              x="15%"
+              y="24%"
+            > your sessions &lt;/text>
+          &lt;/LineChart>
+        &lt;/ResponsiveContainer>
+      &lt;/div>
+  )
+}
+
+AverageSpeedChart.propTypes = {
+  averageSessions: PropTypes.arrayOf(
+    PropTypes.shape({
+        day: PropTypes.number,
+        sessionLength: PropTypes.number,
+    })
+  )
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#kindType">kindType</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed Apr 06 2022 23:22:11 GMT+0100 (British Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

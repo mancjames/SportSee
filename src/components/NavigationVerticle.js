@@ -8,6 +8,7 @@ import {ReactComponent as WeightIcon} from '../assets/weighticon.svg'
  * Component returning verticle navigation bar
  * 
  * @component
+ * @example
  * returns (
  * <NavigationVerticle />
  * )

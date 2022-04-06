@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/DailyActivityGraph.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/DailyActivityGraph.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    ResponsiveContainer
+  } from "recharts";
+  import variables from '../sass/base/_variables.module.scss'
+  import PropTypes from 'prop-types'
+
+  /**
+ * Component displaying the user's daily activity results with a bar chart from 'recharts'
+ *
+ * @component
+ * @example
+ * const activity = [{day: '2020-11-01', kilogram:70, calories:1920}, {day: '2020-11-02', kilogram:71, calories:1670}]
+ * return (
+ *   &lt;DailyActivityGraph activity={props.activity}/>
+ * )
+ */
+
+  /**
+   * CustomToolTip 
+   * @param {Boolean} active if bar is selected
+   * @param {array} payload provides array data from specific bar chart selected
+   * @returns custom tool tip showing only the weight and calories
+   */
+
+   const CustomTooltip = ({ active, payload}) => {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+      return (
+          &lt;div className="dailyActivityGraph__tooltip">
+            &lt;p className="dailyActivityGraph__tooltip__text">{`${payload[0].value}kg`}&lt;/p>
+            &lt;p className="dailyActivityGraph__tooltip__text">{`${payload[1].value}kCal`}&lt;/p>
+          &lt;/div>
+      );
+    }
+  
+    return null;
+  };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  }
+
+  /**
+   * formatDate
+   * @param {string} input input date from JSON 
+   * @returns the date reformated to only provide the day
+   */
+  function formatDate(input) {
+    const date = new Date(input)
+    const day = date.getDate()
+    return day
+  }
+
+  formatDate.propTypes = {
+      input: PropTypes.string
+  }
+
+export default function DailyActivityGraph(props) {
+
+    const data = props.activity.data.sessions.map((d) => ({
+        day: formatDate(d.day),
+        kilogram: d.kilogram,
+        calories: d.calories
+    }));
+
+  return (
+    &lt;div className="dailyActivityGraph">
+        &lt;ResponsiveContainer
+        width="100%"
+        height="100%"
+        >
+        &lt;BarChart
+        data={data}
+        fill="black"
+        margin={{
+            top: 20,
+            right: 0,
+            left: 40,
+            bottom: 20
+          }}
+          barCategoryGap={54}
+          barGap={8}
+          barSize={7}
+    >
+        &lt;text 
+                    className="dailyActivityGraph__title"
+                    x={85}
+                    y={35}
+                    textAnchor="middle"
+                    fill="black"
+                > Daily activity &lt;/text>
+        &lt;CartesianGrid strokeDasharray="2" vertical={false} />
+        &lt;XAxis tickLine={false} dataKey="day" dy={8} />
+        &lt;YAxis orientation="right" axisLine={false} tickLine={false} dx={8} />
+        &lt;Tooltip content={&lt;CustomTooltip />} />
+        &lt;Legend align='right' 
+        verticalAlign='top' 
+        iconType='circle' 
+        iconSize={8} 
+        height={90} 
+        wrapperStyle={{paddingRight: '20px'}}
+        className="dailyActivityGraph__legend" />
+        &lt;Bar name="Weight (kg)" dataKey="kilogram" barSize={5} radius={[10, 10, 0, 0]} fill={variables.colorGraphBlack} />
+        &lt;Bar name="Burned calories (kCal)" dataKey="calories" barSize={5} radius={[10, 10, 0, 0]} fill={variables.colorGraphRedDark} />
+    &lt;/BarChart>
+    &lt;/ResponsiveContainer>
+    &lt;/div>
+  )
+}
+
+DailyActivityGraph.propTypes = {
+    day: PropTypes.string,
+    kilogram: PropTypes.number,
+    calories: PropTypes.number
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#kindType">kindType</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed Apr 06 2022 23:22:11 GMT+0100 (British Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

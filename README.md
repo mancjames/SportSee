@@ -22,6 +22,8 @@ Display users' datas in forms of charts
 
 • Write the Readme
 
+• Add comments to code to create JSDoc report and include PropTypes
+
 ### Resources Provided
 
 • [Sketch Figma](https://www.figma.com/file/EUeLaIjt4cf9bZb1hexM6y/UI-design-Sportify-EN?node-id=1%3A2)
@@ -44,7 +46,9 @@ Display users' datas in forms of charts
 
 • Prop-Types
 
-• JS-Docs
+• JS-Doc
+
+• better-docs
 
 • font-awesome
 
@@ -85,3 +89,12 @@ For purpose of this exercise, the only endpoints available in the application ar
 Any other endpoints will lead to an error page. 
 
 When the application first loads, it will automatically load to '/user/12'.
+
+
+### 4 - Review JSDoc report
+
+To create the JSDoc report, type in the following command:
+
+_yarn run docs_
+
+This will create a 'docs' folder, which will create an index.html file for you to view the page. If you are using Visual Studio Code, I would recommend live-server to view this page.
