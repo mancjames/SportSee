@@ -98,3 +98,5 @@ To create the JSDoc report, type in the following command:
 _yarn run docs_
 
 This will create a 'docs' folder, which will create an index.html file for you to view the page. If you are using Visual Studio Code, I would recommend live-server to view this page.
+
+For the purpose of this exercise, a report has already been created within the 'docs' folder for you to review.
