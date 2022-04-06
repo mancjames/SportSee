@@ -25,7 +25,9 @@ Display users' datas in forms of charts
 ### Resources Provided
 
 • [Sketch Figma](https://www.figma.com/file/EUeLaIjt4cf9bZb1hexM6y/UI-design-Sportify-EN?node-id=1%3A2)
+
 • [Kanban](https://openclassrooms.com/en/paths/315/projects/828/assignment#:~:text=kanban%20with%20all%20user%20Stories)
+
 • [Back-end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
 ## Installation
@@ -33,24 +35,32 @@ Display users' datas in forms of charts
 ### Prerequisites
 
 • React
+
 • React Router
+
 • Sass
+
 • Recharts
+
 • Prop-Types
+
 • JS-Docs
+
 • font-awesome
+
 • yarn
+
 • Node v16
 
 ### 1 - Installing the Back-End
 
 Please follow the instructions in the below link to set up the back end in your local environment
 
-[https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
+https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 
-once installed, launch the back-end on port 3000(default):
+once installed, run the following command to launch the back-end on port 3000(default):
 
-'yarn dev'
+_yarn dev_
 
 ### 2 - Installing and launching the Front-End
 
@@ -58,13 +68,13 @@ Clone the repository of SportSee front-end:
 
 git clone https://github.com/mancjames/SportSee.git
 
-Inside this front-end repository, install dependencies:
+Inside this front-end repository, install dependencies using the following command:
 
-yarn install
+_yarn install_
 
-Launch front-end on port 3001(default):
+To launch front-end on port 3001(default), run the following command:
 
-'yarn start'
+_yarn start_
 
 Front-end is now rendered at URL http://localhost:3001.
 
