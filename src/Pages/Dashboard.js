@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import useFetch from '../utils/hooks/useFetch'
-import Header from './Header'
-import StatsSection from './StatsSection'
+import Header from '../components/Header'
+import StatsSection from '../components/StatsSection'
 import Error from './Error';
 
   /**

@@ -88,7 +88,7 @@ For purpose of this exercise, the only endpoints available in the application ar
 
 Any other endpoints will lead to an error page. 
 
-When the application first loads, it will lead to a landing page to allow you to pick a valid user throuhg a link
+When the application first loads, it will lead to a landing page to allow you to pick a valid user through a link
 
 
 ### 4 - Review JSDoc report

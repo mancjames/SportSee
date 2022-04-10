@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/NavigationVerticle.js</title>
+    <title>JSDoc: Source: Pages/Error.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/NavigationVerticle.js</h1>
+    <h1 class="page-title">Source: Pages/Error.js</h1>
 
     
 
@@ -27,42 +27,28 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
-import {ReactComponent as SitIcon} from '../assets/siticon.svg'
-import {ReactComponent as SwimIcon} from '../assets/swimicon.svg'
-import {ReactComponent as BikeIcon} from '../assets/bikeicon.svg'
-import {ReactComponent as WeightIcon} from '../assets/weighticon.svg'
+import { Link } from 'react-router-dom';
 
-/**
- * Component returning verticle navigation bar
- * 
+  /**
+ * Component displaying Error page
+ *
  * @component
  * @example
- * returns (
- * &lt;NavigationVerticle />
+ * return (
+ *   &lt;Error />
  * )
  */
 
-export default function NavigationVerticle() {
+export default function Error() {
   return (
-    &lt;nav className="navverticle">
-        &lt;ul className="navverticle__list">
-            &lt;li>
-                &lt;SitIcon />
-            &lt;/li>
-            &lt;li>
-                &lt;SwimIcon />
-            &lt;/li>
-            &lt;li>
-                &lt;BikeIcon />
-            &lt;/li>
-            &lt;li>
-                &lt;WeightIcon />
-            &lt;/li>
-        &lt;/ul>
-        &lt;div className="navverticle__footer">
-            &lt;p>Copyright, SportSee 2022&lt;/p>
-        &lt;/div>
-    &lt;/nav>
+    &lt;div className="error">
+        &lt;h1 className="error__header">Sorry&lt;/h1>
+        &lt;h2 className="error__paragraph">We couldn't find that page&lt;/h2>
+        &lt;h2 className="error__paragraph">Please select from one of the users below:&lt;/h2>
+        &lt;Link to={`/user/12`}>User 12&lt;/Link>
+        &lt;br>&lt;/br>
+        &lt;Link to={`/user/18`}>User 18&lt;/Link>
+    &lt;/div>
   )
 }
 </code></pre>
