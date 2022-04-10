@@ -94,6 +94,134 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="ActivityGraphCustomTooltip"><span class="type-signature">(constant) </span>ActivityGraphCustomTooltip<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>ActivityGraphCustomToolTip</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="AverageSpeedCustomTooltip"><span class="type-signature">(constant) </span>AverageSpeedCustomTooltip<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>AverageSpeedCustomToolTip</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -201,7 +329,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_PerformanceRadarChart.js.html">components/PerformanceRadarChart.js</a>, <a href="components_PerformanceRadarChart.js.html#line29">line 29</a>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -247,7 +375,7 @@
     
 
     
-    <h4 class="name" id="CustomTooltip"><span class="type-signature"></span>CustomTooltip<span class="signature">(active, payload)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="changeNumberToCategoryName"><span class="type-signature"></span>changeNumberToCategoryName<span class="signature">(name, number)</span><span class="type-signature"></span></h4>
     
 
     
@@ -255,7 +383,7 @@
 
 
 <div class="description">
-    <p>CustomToolTip</p>
+    <p>changeNumberToCategoryName</p>
 </div>
 
 
@@ -291,13 +419,13 @@
 
         <tr>
             
-                <td class="name"><code>active</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Boolean</span>
+<span class="param-type">object</span>
 
 
             
@@ -307,20 +435,20 @@
 
             
 
-            <td class="description last"><p>if bar is selected</p></td>
+            <td class="description last"><p>provides object with names of categories</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>payload</code></td>
+                <td class="name"><code>number</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">array</span>
+<span class="param-type">string</span>
 
 
             
@@ -330,7 +458,7 @@
 
             
 
-            <td class="description last"><p>provides array data from specific point in line chart</p></td>
+            <td class="description last"><p>takes number value in data as string</p></td>
         </tr>
 
     
@@ -371,7 +499,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_AverageSpeedChart.js.html">components/AverageSpeedChart.js</a>, <a href="components_AverageSpeedChart.js.html#line28">line 28</a>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -400,7 +528,7 @@
 
         
 <div class="param-desc">
-    <p>custom tool tip showing only the amount of minutes for session</p>
+    <p>changes the kind property in data from a number to a named category, eg 1 is changed to cardio</p>
 </div>
 
 
@@ -417,7 +545,7 @@
     
 
     
-    <h4 class="name" id="CustomTooltip"><span class="type-signature"></span>CustomTooltip<span class="signature">(active, payload)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getDayOfMonth"><span class="type-signature"></span>getDayOfMonth<span class="signature">(input)</span><span class="type-signature"></span></h4>
     
 
     
@@ -425,177 +553,7 @@
 
 
 <div class="description">
-    <p>CustomToolTip</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>active</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>if bar is selected</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>payload</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>provides array data from specific bar chart selected</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_DailyActivityGraph.js.html">components/DailyActivityGraph.js</a>, <a href="components_DailyActivityGraph.js.html#line33">line 33</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>custom tool tip showing only the weight and calories</p>
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="formatDate"><span class="type-signature"></span>formatDate<span class="signature">(input)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>formatDate</p>
+    <p>getDayOfMonth</p>
 </div>
 
 
@@ -688,7 +646,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_DailyActivityGraph.js.html">components/DailyActivityGraph.js</a>, <a href="components_DailyActivityGraph.js.html#line56">line 56</a>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -734,7 +692,7 @@
     
 
     
-    <h4 class="name" id="formatDay"><span class="type-signature"></span>formatDay<span class="signature">(input)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="numberedDayOfWeekToLetterDay"><span class="type-signature"></span>numberedDayOfWeekToLetterDay<span class="signature">(input)</span><span class="type-signature"></span></h4>
     
 
     
@@ -742,7 +700,7 @@
 
 
 <div class="description">
-    <p>formatDay</p>
+    <p>numberedDayOfWeekToLetterDay</p>
 </div>
 
 
@@ -835,7 +793,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_AverageSpeedChart.js.html">components/AverageSpeedChart.js</a>, <a href="components_AverageSpeedChart.js.html#line49">line 49</a>
+        <a href="utils_Utilities.js.html">utils/Utilities.js</a>, <a href="utils_Utilities.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -876,176 +834,6 @@
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="kindType"><span class="type-signature"></span>kindType<span class="signature">(kind, value)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>kindType</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>kind</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>provides kind data with names of categories</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>takes value of kind property in data as string</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_PerformanceRadarChart.js.html">components/PerformanceRadarChart.js</a>, <a href="components_PerformanceRadarChart.js.html#line39">line 39</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>changes the kind property in data from a number to a named category, eg 1 is changed to cardio</p>
-</div>
-
-
-
-    
-
-
-
-
-
-        
     
 
     
@@ -1061,13 +849,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#kindType">kindType</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityGraphCustomTooltip">ActivityGraphCustomTooltip</a></li><li><a href="global.html#AverageSpeedCustomTooltip">AverageSpeedCustomTooltip</a></li><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#changeNumberToCategoryName">changeNumberToCategoryName</a></li><li><a href="global.html#getDayOfMonth">getDayOfMonth</a></li><li><a href="global.html#numberedDayOfWeekToLetterDay">numberedDayOfWeekToLetterDay</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed Apr 06 2022 23:22:11 GMT+0100 (British Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Apr 10 2022 12:04:19 GMT+0100 (British Summer Time)
 </footer>
 
 <script> prettyPrint(); </script>

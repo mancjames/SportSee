@@ -26,7 +26,7 @@ function App() {
       <main className="app__container">
       
     <Routes>
-      <Route path="/" exact element={<Navigate replace to="/user/12" />} />
+      {/* <Route path="/" exact element={<Navigate replace to="/user/12" />} /> */}
         <Route path="/user/:id" element={<Dashboard />} />
         <Route path="*" element={<Error />} />
     </Routes>

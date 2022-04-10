@@ -11,6 +11,7 @@ import {
   } from "recharts";
   import variables from '../sass/base/_variables.module.scss'
   import PropTypes from 'prop-types'
+  import { ActivityGraphCustomTooltip, getDayOfMonth } from '../utils/Utilities';
 
   /**
  * Component displaying the user's daily activity results with a bar chart from 'recharts'
@@ -23,50 +24,10 @@ import {
  * )
  */
 
-  /**
-   * CustomToolTip 
-   * @param {Boolean} active if bar is selected
-   * @param {array} payload provides array data from specific bar chart selected
-   * @returns custom tool tip showing only the weight and calories
-   */
-
-   const CustomTooltip = ({ active, payload}) => {
-    if (active && payload && payload.length) {
-      return (
-          <div className="dailyActivityGraph__tooltip">
-            <p className="dailyActivityGraph__tooltip__text">{`${payload[0].value}kg`}</p>
-            <p className="dailyActivityGraph__tooltip__text">{`${payload[1].value}kCal`}</p>
-          </div>
-      );
-    }
-  
-    return null;
-  };
-
-  CustomTooltip.propTypes = {
-    active: PropTypes.bool,
-    payload: PropTypes.array,
-  }
-
-  /**
-   * formatDate
-   * @param {string} input input date from JSON 
-   * @returns the date reformated to only provide the day
-   */
-  function formatDate(input) {
-    const date = new Date(input)
-    const day = date.getDate()
-    return day
-  }
-
-  formatDate.propTypes = {
-      input: PropTypes.string
-  }
-
 export default function DailyActivityGraph(props) {
 
     const data = props.activity.data.sessions.map((d) => ({
-        day: formatDate(d.day),
+        day: getDayOfMonth(d.day),
         kilogram: d.kilogram,
         calories: d.calories
     }));
@@ -100,7 +61,7 @@ export default function DailyActivityGraph(props) {
         <CartesianGrid strokeDasharray="2" vertical={false} />
         <XAxis tickLine={false} dataKey="day" dy={8} />
         <YAxis orientation="right" axisLine={false} tickLine={false} dx={8} />
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<ActivityGraphCustomTooltip />} />
         <Legend align='right' 
         verticalAlign='top' 
         iconType='circle' 

@@ -16,7 +16,10 @@ export default function Error() {
     <div className="error">
         <h1 className="error__header">Sorry</h1>
         <h2 className="error__paragraph">We couldn't find that page</h2>
-        <Link to={`/`}>Return Home</Link>
+        <h2 className="error__paragraph">Please select from one of the users below:</h2>
+        <Link to={`/user/12`}>User 12</Link>
+        <br></br>
+        <Link to={`/user/18`}>User 18</Link>
     </div>
   )
 }

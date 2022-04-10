@@ -64,21 +64,21 @@ https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 
 once installed, run the following command to launch the back-end on port 3000(default):
 
-_yarn dev_
+```yarn dev```
 
 ### 2 - Installing and launching the Front-End
 
 Clone the repository of SportSee front-end in your chosen location using the following command:
 
-_git clone https://github.com/mancjames/SportSee.git_
+```git clone https://github.com/mancjames/SportSee.git```
 
 Inside this reposity, use the following to install the required dependencies:
 
-_yarn install_
+```yarn install```
 
 Once done, you can launch the front-end application on port 3001(default) by running the following command:
 
-_yarn start_
+```yarn start```
 
 The application is now rendered at URL http://localhost:3001.
 
@@ -88,14 +88,14 @@ For purpose of this exercise, the only endpoints available in the application ar
 
 Any other endpoints will lead to an error page. 
 
-When the application first loads, it will automatically load to '/user/12'.
+When the application first loads, it will lead to a landing page to allow you to pick a valid user throuhg a link
 
 
 ### 4 - Review JSDoc report
 
 To create the JSDoc report, type in the following command:
 
-_yarn run docs_
+```yarn run docs```
 
 This will create a 'docs' folder, which will create an index.html file for you to view the page. If you are using Visual Studio Code, I would recommend live-server to view this page.
 

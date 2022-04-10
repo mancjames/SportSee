@@ -8,6 +8,7 @@ import {
     ResponsiveContainer
 } from 'recharts';
 import variables from '../sass/base/_variables.module.scss';
+import { changeNumberToCategoryName } from '../utils/Utilities';
 
 /**
  * Component displaying the user's performances using a radar chart from 'recharts'
@@ -21,34 +22,11 @@ import variables from '../sass/base/_variables.module.scss';
  * )
  */
 
-/**
- * 
- * @param {string} str inputs a string
- * @returns the string with the first letter as a capital eg cardio to Cardio
- */
- function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
-/**
- * kindType
- * @param {object} kind provides kind data with names of categories
- * @param {string} value takes value of kind property in data as string
- * @returns changes the kind property in data from a number to a named category, eg 1 is changed to cardio
- */
-function kindType(kind, value){
-    for (let property in kind)
-    if (property === value) return capitalizeFirstLetter(kind[property]);
-return "category not found";
-}
-
-
-
 export default function PerformanceRadarChart(props) {
 
     const data = props.data.map((obj) => ({
         value: obj.value,
-        kind: kindType(props.kind, obj.kind.toString())
+        kind: changeNumberToCategoryName(props.kind, obj.kind.toString())
     }));
 
   return (

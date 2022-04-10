@@ -7,6 +7,7 @@ import {
     Tooltip,
     ResponsiveContainer
   } from "recharts";
+  import { AverageSpeedCustomTooltip, numberedDayOfWeekToLetterDay } from '../utils/Utilities';
 
   /**
  * Component displaying the user's sessions results with a line chart from 'recharts'
@@ -19,65 +20,10 @@ import {
  * )
  */
 
-   /**
-   * CustomToolTip 
-   * @param {Boolean} active if bar is selected
-   * @param {array} payload provides array data from specific point in line chart
-   * @returns custom tool tip showing only the amount of minutes for session
-   */
-   const CustomTooltip = ({ active, payload}) => {
-    if (active && payload && payload.length) {
-        return (
-            <div className="averageSpeedGraph__tooltip">
-                <p>{`${payload[0].value}min`}</p>
-            </div>
-        );
-    }
-    return null;
-  };
-
-  CustomTooltip.propTypes = {
-    active: PropTypes.bool,
-    payload: PropTypes.array,
-  }
-
-   /**
-   * formatDay
-   * @param {integer} input input day number from JSON 
-   * @returns the day of the week based on number of day in week - for example day 3 is W for Wednesday
-   */
-  function formatDay(input){
-      switch(input){
-        case 1:
-          input = 'M';
-          break;
-        case 2:
-          input = 'T';
-          break;
-        case 3:
-          input = 'W';
-          break;
-        case 4:
-          input = 'T';
-          break;
-        case 5:
-          input = 'F';
-          break;
-        case 6:
-        case 7:
-          input = 'S';
-          break;
-        default:
-          input = 'unrecognised day'
-      }
-      return input
-  };
-
 export default function AverageSpeedChart(props) {
-  console.log(props)
 
     const data = props.averageSessions.map((d) => ({
-        day: formatDay(d.day),
+        day: numberedDayOfWeekToLetterDay(d.day),
         sessionLength: d.sessionLength
     }));
     
@@ -101,7 +47,7 @@ export default function AverageSpeedChart(props) {
               tickMargin={20}
               dy={20}
             />
-            <Tooltip content={<CustomTooltip />}/>
+            <Tooltip content={<AverageSpeedCustomTooltip />}/>
 
             <defs>
               <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">

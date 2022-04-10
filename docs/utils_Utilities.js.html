@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utils/Utilities.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utils/Utilities.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types'
+
+/**
+ * 
+ * @param {string} str inputs a string
+ * @returns the string with the first letter as a capital eg cardio to Cardio
+ */
+ export function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  capitalizeFirstLetter.propTypes = {
+      str: PropTypes.string
+  }
+
+/**
+* AverageSpeedCustomToolTip 
+* @param {Boolean} active if bar is selected
+* @param {array} payload provides array data from specific point in line chart
+* @returns custom tool tip showing only the amount of minutes for session
+*/
+export const AverageSpeedCustomTooltip = ({ active, payload}) => {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+        return (
+            &lt;div className="averageSpeedGraph__tooltip">
+                &lt;p>{`${payload[0].value}min`}&lt;/p>
+            &lt;/div>
+        );
+    }
+    return null;
+  };
+    
+  AverageSpeedCustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
+  }
+
+/**
+ * ActivityGraphCustomToolTip 
+ * @param {Boolean} active if bar is selected
+ * @param {array} payload provides array data from specific bar chart selected
+ * @returns custom tool tip showing only the weight and calories
+ */
+
+export const ActivityGraphCustomTooltip = ({ active, payload}) => {
+if (active &amp;&amp; payload &amp;&amp; payload.length) {
+    return (
+        &lt;div className="dailyActivityGraph__tooltip">
+        &lt;p className="dailyActivityGraph__tooltip__text">{`${payload[0].value}kg`}&lt;/p>
+        &lt;p className="dailyActivityGraph__tooltip__text">{`${payload[1].value}kCal`}&lt;/p>
+        &lt;/div>
+    );
+}
+return null;
+};
+
+ActivityGraphCustomTooltip.propTypes = {
+active: PropTypes.bool,
+payload: PropTypes.array,
+}
+
+/**
+ * getDayOfMonth
+ * @param {string} input input date from JSON 
+ * @returns the date reformated to only provide the day
+ */
+export function getDayOfMonth(input) {
+    const date = new Date(input)
+    const day = date.getDate()
+    return day
+}
+
+getDayOfMonth.propTypes = {
+    input: PropTypes.string
+}
+
+/**
+ * numberedDayOfWeekToLetterDay
+ * @param {integer} input input day number from JSON 
+ * @returns the day of the week based on number of day in week - for example day 3 is W for Wednesday
+ */
+export function numberedDayOfWeekToLetterDay(input){
+switch(input){
+    case 1:
+        input = 'M';
+        break;
+    case 2:
+        input = 'T';
+        break;
+    case 3:
+        input = 'W';
+        break;
+    case 4:
+        input = 'T';
+        break;
+    case 5:
+        input = 'F';
+        break;
+    case 6:
+    case 7:
+        input = 'S';
+        break;
+    default:
+        input = 'unrecognised day'
+    }
+    return input
+};
+
+numberedDayOfWeekToLetterDay.propTypes = {
+    input: PropTypes.number
+}
+
+/**
+ * changeNumberToCategoryName
+ * @param {object} name provides object with names of categories
+ * @param {string} number takes number value in data as string
+ * @returns changes the kind property in data from a number to a named category, eg 1 is changed to cardio
+ */
+export function changeNumberToCategoryName(name, number){
+    for (let property in name)
+    if (property === number) return capitalizeFirstLetter(name[property]);
+return "category not found";
+}
+
+changeNumberToCategoryName.propTypes = {
+    name: PropTypes.object,
+    number: PropTypes.string
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ActivityGraphCustomTooltip">ActivityGraphCustomTooltip</a></li><li><a href="global.html#AverageSpeedCustomTooltip">AverageSpeedCustomTooltip</a></li><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#changeNumberToCategoryName">changeNumberToCategoryName</a></li><li><a href="global.html#getDayOfMonth">getDayOfMonth</a></li><li><a href="global.html#numberedDayOfWeekToLetterDay">numberedDayOfWeekToLetterDay</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Apr 10 2022 12:04:19 GMT+0100 (British Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
